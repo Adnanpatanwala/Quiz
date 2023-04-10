@@ -11,3 +11,254 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/* general css------> */
+
+
+/* :root{
+  --nav-color:rgb(202, 201, 201);
+  --setup-text-color:rgb(58, 58, 58);
+  --body:rgb(241, 241, 250);
+  --loader:hsl(205, 78%, 60%);
+  --white:rgb(255,255,255);
+  --submit-btn:rgb(209, 209, 6);
+} */
+
+.light{
+  --nav-color:rgb(202, 201, 201);
+  --setup-text-color:rgb(58, 58, 58);
+  --body:rgb(241, 241, 250);
+  --loader:hsl(205, 78%, 60%);
+  --white:rgb(255,255,255);
+  --submit-btn:rgb(209, 209, 6);
+  --text-color:black;
+  --btn:var(--body);
+}
+.dark{
+  --nav-color:var(--white);
+  --setup-text-color:white;
+  --body:#111827;
+  --loader:hsl(205, 78%, 60%);
+  --white:#1E293B;
+  --submit-btn:var(--btn);
+  --btn:#A855F7;
+  --text-color:white;
+}
+
+body{
+  background-color: var(--body);
+}
+
+ .user h5{
+  color: var(--text-color);
+ }
+ .user{
+  margin-left: 1rem;
+ }
+
+ .toggle{
+  padding: 0.3rem 0.6rem;
+  color: white;
+  background-color: rgb(84, 84, 241);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+
+ }
+
+.loading{
+  height: 5rem;
+  width: 5rem;
+  margin: 30vh auto;
+  border-radius: 50%;
+  border: 5px solid rgb(212, 212, 212);
+  border-top-color:  var(--loader);
+  animation: snipper 0.6s linear infinite;
+}
+@keyframes snipper{
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+.nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.5rem;
+  box-shadow: 1px 0px 5px var(--nav-color);
+  background-color: var(--white);
+}
+
+.heading-nav{
+  color: var(--text-color);
+}
+
+
+.right{
+  display: flex;
+  align-items: center;
+} 
+
+/* setup form -----> */
+ 
+
+.setup-container{   
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+} 
+
+form{
+  background-color: var(--white);
+  border-radius: 20px;
+  padding: 2rem 3.5rem; 
+  margin: 0rem 3rem;
+}
+
+label{
+  display: block;
+  color: var(--setup-text-color);
+
+}
+option{
+  border-radius: 10px;
+}
+input{
+  padding: 0.3rem 0.5rem;
+  width: 15rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid rgb(204, 204, 253); 
+} 
+select{
+  padding: 0.3rem 0.5rem;
+  width: 16rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid rgb(204, 204, 253); 
+  
+}
+
+.form-control{
+  margin-bottom: 1rem;
+}
+
+
+.submit-btn{
+  background-color: var(--submit-btn);
+  color: var(--text-color);
+  border: none;
+  font-size: 1rem;
+  padding: 0.5rem 1.3rem ;
+  cursor: pointer;
+  border-radius: 10px;
+  
+}
+
+.submit{ 
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* quiz------> */
+.questions{
+  margin-bottom: 3rem;
+}
+
+.ques{
+  color: var(--text-color);
+}
+
+.quiz-container{
+  margin-top: 3rem;
+  /* display: flex;   */
+  max-width: 85vw;
+  margin: 2rem auto;
+  background-color:var(--white) ;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+.correct-answer p{
+  display: flex;
+  justify-content: right;
+  color: var(--text-color);
+}
+
+.options-btn{
+  display: block;
+  width: 40vw;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  font-weight: bolder;
+  border: none;
+  background-color: var(--btn);
+  color: var(--text-color);
+}
+.options-btn:hover{
+  background-color: var(--loader);
+  color: white;
+}
+.options{  
+  display: inline-block;
+}
+
+.next-btn{   
+display: flex;
+justify-content: right;
+margin-top: 2rem;
+} 
+.next-btn button{
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(73, 73, 207);
+  /* color: var(--white); */
+  color: white;
+
+  cursor: pointer;
+}
+
+
+.heading-setup{
+  color: var(--setup-text-color);
+}
+
+/* modal=====> */
+.modal{ 
+  background-color: white;
+  position: fixed; 
+  align-items: center;
+  width: 100%;
+  height: 100%; 
+  top: 0;
+  left: 0;
+  justify-content: center;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.75);
+ opacity: 0;
+ z-index: -1;
+
+}
+
+.isOpen{
+  z-index: 1;
+  opacity: 999;
+}
+
+.modal-content{
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  width: 60vw;
+  text-align: center;
+
+}
+
+.error{
+  color: red;
+}
